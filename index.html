@@ -6,16 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Civic Lens is an independent news organization committed to unbiased reporting, investigative journalism, and truth-driven storytelling.">
   <meta name="author" content="Civic Lens">
-
-<!-- ADD Open Graph Meta for title, description, image, url, type -->
-
-<!-- ADD link to stylesheet -->
-
   <title>Civic Lens</title>
+<!-- ADD Open Graph Meta for title, description, image, url, type -->
+  <meta property="og:title" content="Civic Lens">
+  <meta property="og:description" content="Independent journalism for truth-driven storytelling.">
+  <meta property="og:image" content="https://www.civiclens.org/images/og-image.jpg">
+  <meta property="og:url" content="https://www.civiclens.org">
+  <meta property="og:type" content="website">
+<!-- ADD link to stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 <!-- ADD semantic and validated HTML -->
+ <a href="#main-content" id="skip">Skip to main content</a>
 <!-- ADD skip to main content -->
+  <header>
     <button id="theme-toggle" aria-label="Toggle light/dark mode">
       <svg width="35px" height="35px" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs><clipPath id="a"><path d="m18.512 18.512h62.977v62.977h-62.977z"/></clipPath></defs>
@@ -23,34 +29,44 @@
       </svg>
     </button>
 
-      Civic Lens
+    <h1>Civic Lens</h1>
       <p class="tagline">See Clearly. Know Deeply. Act Justly.</p>
       
       <nav class="mobile-nav" aria-label="Mobile Navigation">
         <input type="checkbox" id="menu-toggle" hidden>
         <label for="menu-toggle" class="menu-button">Menu</label>
         <ul class="menu">
-          <li><a href="#breaking-news">Breaking News</a></li>
-          <li><a href="#featured-aticles">Featured Articles</a></li>
-          <li><a href="#alerts">Alerts</a></li>
-          <li><a href="#social">Social</a></li>
+            <li><a href="#breaking-news">Breaking News</a></li>
+            <li><a href="#featured-aticles">Featured Articles</a></li>
+            <li><a href="#alerts">Alerts</a></li>
+            <li><a href="#social">Social</a></li>
         </ul>
       </nav>
-      
-      Welcome to Civic Lens
-        We are an independent news organization dedicated to unbiased reporting, investigative journalism, and truth-driven storytelling. At Civic Lens, our mission is to expose the facts, amplify marginalized voices, and shine light on the systems that shape our society.</p>
-        <blockquote class="tagline">“We don't follow the narrative. We follow the facts.”</blockquote>
+  </header>
 
-      Breaking News
+  <main id="main-content">
+    <section id="welcome">
+      <h2>Welcome to Civic Lens</h2>
+      <p>We are an independent news organization dedicated to unbiased reporting, investigative journalism, and truth-driven storytelling. At Civic Lens, our mission is to expose the facts, amplify marginalized voices, and shine light on the systems that shape our society.</p>
+      <blockquote class="tagline">“We don't follow the narrative. We follow the facts.”</blockquote>
+    </section>
 
-        Federal Investigation Launched into Water Mismanagement in the Southwest
-        The Department of Justice has announced a full investigation into decades of water distribution practices affecting tribal lands and rural communities.
-        videos/water-management.mp4
-        
-        Voter Suppression Bill Faces Pushback in State Supreme Court
-        Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.
-        videos/voter-suppression.mp4
-        
+      <section id="breaking-news">
+        <h2>Breaking News</h2>
+          <article>
+            <h3>Federal Investigation Launched into Water Mismanagement in the Southwest</h3>
+              <p>The Department of Justice has announced a full investigation into decades of water distribution practices affecting tribal lands and rural communities.</p>
+              <video controls>
+                <source src="videos/water-management.mp4" type="video/mp4">Your browser does not support the video tag.
+              </video>
+          </article>
+          <article>
+            <h3>Voter Suppression Bill Faces Pushback in State Supreme Court</h3>
+              <p>Civil rights advocates argue that the bill disenfranchises thousands of voters and potential voters of color and those in rural areas of the country.</p>
+            <video controls>
+              <source src="videos/voter-suppression.mp4" type="video/mp4">Your browser does not support the video tag.
+            </video>
+          </article>
       Featured Articles
         
         The Cost of Silence: Whistleblower Stories from Inside Tech Giants
