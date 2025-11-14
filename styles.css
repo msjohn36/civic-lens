@@ -29,25 +29,31 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -71,10 +77,12 @@ body.light-mode {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
 }
+
 body.dark-mode {
   background-color: var(--truth-text);
   color: var(--watchdog-white);
 }
+
 #theme-toggle {
   position: absolute;
   top: 1rem;
@@ -96,6 +104,7 @@ body.dark-mode {
   z-index: 100;
   transition: top 0.3s;
 }
+
 #skip:focus {
   top: 0;
 }
@@ -107,6 +116,7 @@ header {
   position: relative;
   text-align: center;
 }
+
 h1{
   font-family: var(--font-heading);
   font-size: 2rem;
@@ -118,6 +128,7 @@ h1{
   font-style: italic;
   margin-bottom: 1rem;
 }
+
 .mobile-nav ul {
   list-style: none;
   display: flex;
@@ -126,9 +137,22 @@ h1{
   gap: 0.5rem;
 }
 
-/* ///ADD/// Global Layout Styles */
+.mobile-nav a {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
 
-/* ///ADD/// Global Text Styles */
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+  background-color: var(--blue-bulletin);
+  border: 2px solid var(--news-flash);
+  color: var(--watchdog-white);
+}
+/* ///ADD/// Global Layout Styles */
 body {
   font-family: var(--font-body);
   line-height: 1.6;
@@ -136,6 +160,61 @@ body {
   background-color: var(--watchdog-white);
   color: var(--truth-text);
 }
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+#breaking-news {
+  display: grid;
+  gap: 1.5rem;
+}
+
+#breaking-news article {
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+#breaking-news h3 {
+  color: var(--watchdog-white);
+}
+
+#breaking-news p {
+  margin-bottom: 0.75rem;
+}
+
+#breaking-news video {
+  width: 100%;
+}
+
+#featured-articles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+#featured-articles h3 {
+  color: var(--truth-text);
+  margin-bottom: 0.5rem;
+}
+#featured-articles article {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text)
+  border: 1px solid var(--story-subtitle);
+  border-left: 4px solid var(--story-subtitle);
+  padding: 1rem;
+  transition: var(--transition);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+/* ///ADD/// Global Text Styles */
+
 /* ///ADD/// medium styles 620px */
 
 
