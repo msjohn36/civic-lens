@@ -188,6 +188,53 @@ h1{
   border: 2px solid var(--news-flash);
   color: var(--watchdog-white);
 }
+.menu-button {
+  display: block;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-nav .menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--blue-bulletin);
+  border: 2px solid var(--news-flash);
+  margin-top: 0.75rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#menu-toggle:checked ~ .menu {
+  display: flex;
+  max-height: 500px;
+  opacity: 1;
+}
+
+.mobile-nav .menu li a {
+  display: block;
+  background-color: var(--news-flash);
+  color: var(--watchdog-white);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-nav .menu li:last-child a {
+  border-bottom: none;
+}
+
+.mobile-nav .menu a:hover {
+  background-color: var(--blue-bulletin);
+}
+
 /* ///ADD/// Global Layout Styles */
 body {
   font-family: var(--font-body);
@@ -213,7 +260,6 @@ section {
 #breaking-news h2 {
  margin: -10px;;
 }
-
 
 #breaking-news article {
   background-color: var(--news-flash);
@@ -322,6 +368,7 @@ h3 {
   border: 2px solid var(--blue-bulletin);
   padding: 1rem;
 }
+
  input[type="radio"]{
   appearance: none;
   width: 20px;
@@ -353,7 +400,8 @@ button[type="submit"] {
   margin-top: 1rem;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 8px 10px rgba(0,0,0,0.4),
+    inset 0 1px 1px rgba(255,255,255,0.6);;
 }
 
 button[type="submit"]:hover {
@@ -403,20 +451,25 @@ footer p {
 }
 /* ///ADD/// medium styles 620px */
 @media (min-width: 620px) and (max-width: 919px) {
-  .menu-button {
-    display: none;
-  }
-  .mobile-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 1rem;
-  }
-  .mobile-nav a {
-    display: block;
-    background-color: var(--news-flash);
-    padding: 0.5rem 1rem;
-  }
+ .menu-button {
+  display: none;
+}
+.mobile-nav .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  background: none;
+  border: none;
+  margin-top: 10px;
+  max-height: none;
+  opacity: 1;
+}
+.mobile-nav .menu a {
+  display: block;
+  background-color: var(--news-flash);
+  padding: 0.5rem 1rem;
+}
   #breaking-news {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -496,19 +549,25 @@ footer p {
     padding: 2rem 3rem;
   }
   .menu-button {
-    display: none;
-  }
-  .mobile-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 1rem;
-  }
-  .mobile-nav a {
-    display: block;
-    background-color: var(--news-flash);
-    padding: 0.5rem 1rem;
-  }
+  display: none;
+}
+.mobile-nav .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  background: none;
+  border: none;
+  margin-top: 10px;
+  max-height: none;
+  opacity: 1;
+}
+.mobile-nav .menu a {
+  display: block;
+  background-color: var(--news-flash);
+  padding: 0.5rem 1rem;
+}
+
   #breaking-news {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -563,7 +622,7 @@ footer p {
  }
   #stay-informed fieldset {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
  }
  #stay-informed fieldset label {
@@ -579,12 +638,72 @@ footer p {
 }
 
 /* ///ADD/// x-large styles 1024px */
-
+@media (min-width: 1024px) {
+  body {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  #theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 8rem; 
+  }
+  header,
+  footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  header h1, header p, header .mobile-nav {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+  footer h2, footer .socials {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode) {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+
+  body:not(.light-mode) header {
+    background-color: var(--blue-bulletin);
+  }
+
+  body:not(.light-mode) #featured-articles article {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+
+  body:not(.light-mode) h2,
+  body:not(.light-mode) h3 {
+    color: var(--watchdog-white);
+  }
+}
+@media (prefers-color-scheme: light) {
+  body:not(.dark-mode) {
+    background-color: var(--watchdog-white);
+    color: var(--truth-text);
+  }
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+} */
 
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
-@supports (selector(:has(*))) {
-
+@supports selector(:has(*)) {
+  :root { --has-support: true; }
 }
