@@ -172,6 +172,10 @@ h1{
   display: flex;
 }
 
+.mobile-nav:has(#menu-toggle:checked) .menu {
+  border-color: var(--watchdog-white);
+}
+
 .mobile-nav a {
   display: none;
   background-color: var(--news-flash);
@@ -692,18 +696,9 @@ footer p {
   }
 }
 
-/* @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-} */
-
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports selector(:has(*)) {
-  :root { --has-support: true; }
-}
+  header:has(#menu-toggle:checked) {
+    background-color: var(--news-flash);
+  }
