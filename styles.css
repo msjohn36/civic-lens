@@ -702,3 +702,4 @@ footer p {
   header:has(#menu-toggle:checked) {
     background-color: var(--news-flash);
   }
+}
